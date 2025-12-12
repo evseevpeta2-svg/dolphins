@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мир дельфинов</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Шапка -->
+    <header style="background-image: url('img/img1.png');">
+        <div class="header-overlay">
+            <h1>Мир дельфинов</h1>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="container">
+        <!-- Введение -->
+        <section class="intro">
+            <h2>О дельфинах</h2>
+            <p>Умный взгляд, изящные движения и загадочная «улыбка» — дельфины веками восхищают человечество. Приглашаем вас заглянуть за кулисы их мира: узнать о языке, интеллекте и невероятных отношениях внутри стаи. Откройте для себя больше, чем просто факты — почувствуйте связь с этими удивительными существами.</p>
+        </section>
+
+        <!-- Карусель дельфинов -->
+        <section class="dolphins-section">
+            <h2>Виды дельфинов</h2>
+            
+            <!-- Контейнер карусели -->
+            <div class="carousel-container">
+                <!-- Кнопка "назад" -->
+                <button class="carousel-btn prev-btn" onclick="prevSlide()">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                
+                <!-- Карусель -->
+                <div class="carousel">
+                    <!-- Слайд 1 - Афалина -->
+                    <div class="dolphin-card active">
+                        <img src="img/dolphin1.png" alt="Афалина">
+                        <h3>Афалина</h3>
+                        <p>Самый известный вид дельфинов. Длина до 4 метров. Афалина способна узнавать себя в зеркале, что свидетельствует о высоком уровне самосознания, а также использует индивидуальные звуковые "имена" для общения с сородичами.</p>
+                        <button class="sound-btn" onclick="playSound('dolphin1.mp3')">
+                            <i class="fas fa-volume-up"></i> Голос
+                        </button>
+                    </div>
+
+                    <!-- Слайд 2 - Белуха -->
+                    <div class="dolphin-card">
+                        <img src="img/dolphin2.png" alt="Белуха">
+                        <h3>Белуха</h3>
+                        <p>"Морская канарейка". Обитает в арктических водах. Белуха издаёт около 50 различных звуков — от щелчков и свистов до имитации человеческой речи, а её гибкая шея позволяет поворачивать голову почти на 90 градусов.</p>
+                        <button class="sound-btn" onclick="playSound('dolphin2.mp3')">
+                            <i class="fas fa-volume-up"></i> Голос
+                        </button>
+                    </div>
+
+                    <!-- Слайд 3 - Косатка -->
+                    <div class="dolphin-card">
+                        <img src="img/dolphin3.png" alt="Косатка">
+                        <h3>Косатка</h3>
+                        <p>Крупнейший представитель дельфиновых. Хищник. Косатка живёт семейными группами во главе с самой старшей самкой, передавая охотничьи приёмы и диалекты из поколения в поколение.</p>
+                        <button class="sound-btn" onclick="playSound('dolphin3.mp3')">
+                            <i class="fas fa-volume-up"></i> Голос
+                        </button>
+                    </div>
+
+                    <!-- Слайд 4 - Дельфин-белобочка (добавил 4-й вид) -->
+                    <div class="dolphin-card">
+                        <img src="img/dolphin4.png" alt="Дельфин-белобочка">
+                        <h3>Дельфин-белобочка</h3>
+                        <p>Самый быстрый дельфин, развивает скорость до 60 км/ч. Образует стаи до 1000 особей. Отличается характерными жёлтыми полосами по бокам.</p>
+                        <button class="sound-btn" onclick="playSound('dolphin4.mp3')">
+                            <i class="fas fa-volume-up"></i> Голос
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Кнопка "вперёд" -->
+                <button class="carousel-btn next-btn" onclick="nextSlide()">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+
+            <!-- Точки-индикаторы -->
+            <div class="carousel-dots">
+                <span class="dot active" onclick="goToSlide(0)"></span>
+                <span class="dot" onclick="goToSlide(1)"></span>
+                <span class="dot" onclick="goToSlide(2)"></span>
+                <span class="dot" onclick="goToSlide(3)"></span>
+            </div>
+        </section>
+
+        <!-- Интересный факт -->
+        <section class="fun-fact">
+            <p>Дельфины спят с одним открытым глазом! Полушария их мозга отдыхают по очереди.</p>
+        </section>
+    </main>
+
+    <!-- Подвал -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="img/logo.png" alt="Логотип" class="footer-logo-img">
+            </div>
+            
+            <div class="social-links">
+                <div class="social-icons">
+                    <a href="https://youtube.com" target="_blank" class="social-btn">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://t.me" target="_blank" class="social-btn">
+                        <i class="fab fa-telegram"></i>
+                    </a>
+                    <a href="mailto:dolphins@example.com" class="social-btn">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Аудио -->
+    <audio id="audio-player" preload="auto">
+        <source src="" type="audio/mpeg">
+    </audio>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
