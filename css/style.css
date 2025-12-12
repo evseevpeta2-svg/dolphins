@@ -1,0 +1,377 @@
+/* Контрастный тёмно-синий градиент */
+body {
+    background: linear-gradient(135deg, 
+        #0a192f 0%,      /* Тёмно-синий */
+        #0f2547 25%,     /* Немного светлее */
+        #142a50 50%,     /* Средний синий */
+        #0f2547 75%,     /* Немного светлее */
+        #0a192f 0%     /* Тёмно-синий */
+    ) fixed;
+    background-attachment: fixed;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #ffffff;
+    line-height: 1.7;
+}
+/* Шапка */
+header {
+    height: 330px;
+    background: url('../img/img1.png') center/cover no-repeat;
+    position: relative;
+}
+
+.header-overlay {
+    background: rgba(10, 25, 47, 0.85);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0px;
+}
+
+header h1 { 
+    color: #64ccff; 
+    font-size: 3rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+header p {
+    color: #a8d8ff;
+    font-size: 1.2rem;
+}
+
+.container { 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 40px 20px;
+}
+
+/* Секции */
+h2 {
+    text-align: center; 
+    color: #64ccff; 
+    margin: 30px 0;
+    font-size: 2.2rem;
+}
+
+/* Введение */
+.intro {
+    background: rgba(26, 54, 93, 0.7);
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    text-align: center;
+    border-left: 5px solid #64ccff;
+}
+
+.intro p {
+    color: #c2e5ff;
+    font-size: 1.1rem;
+}
+
+/* КАРУСЕЛЬ ДЕЛЬФИНОВ */
+.carousel-container {
+    position: relative;
+    max-width: 1100px;
+    margin: 40px auto;
+    overflow: hidden;
+    border-radius: 15px;
+    background: rgba(26, 54, 93, 0.3);
+    padding: 20px;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    gap: 20px;
+    padding: 10px;
+}
+
+/* Карточка дельфина (в карусели) */
+.dolphin-card {
+    flex: 0 0 calc(100% - 40px);
+    background: rgba(26, 54, 93, 0.95);
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    border: 2px solid #2a5298;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    opacity: 0.6;
+    transform: scale(0.9);
+    transition: all 0.5s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.dolphin-card.active {
+    opacity: 1;
+    transform: scale(1);
+    border-color: #64ccff;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+.dolphin-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 3px solid #64ccff;
+}
+
+.dolphin-card h3 {
+    color: #64ccff;
+    margin: 15px 0;
+    font-size: 1.8rem;
+}
+
+.dolphin-card p {
+    color: #a8d8ff;
+    font-size: 1.05rem;
+    margin-bottom: 25px;
+    flex-grow: 1;
+    line-height: 1.5;
+}
+
+/* Кнопки звука */
+.sound-btn {
+    background: linear-gradient(135deg, #2a5298, #1e3c72);
+    color: white;
+    border: none;
+    padding: 14px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+    width: 100%;
+    margin-top: auto;
+}
+
+.sound-btn:hover {
+    background: linear-gradient(135deg, #64ccff, #2a5298);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(100, 204, 255, 0.3);
+}
+
+.sound-btn i {
+    margin-right: 10px;
+}
+
+/* Кнопки карусели */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(100, 204, 255, 0.9);
+    color: white;
+    border: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.carousel-btn:hover {
+    background: #64ccff;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+/* Точки-индикаторы */
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 40px;
+}
+
+.dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #2a5298;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: 2px solid transparent;
+}
+
+.dot.active {
+    background: #64ccff;
+    transform: scale(1.2);
+    border-color: #a8d8ff;
+}
+
+.dot:hover {
+    background: #64ccff;
+    transform: scale(1.1);
+}
+
+/* Интересный факт */
+.fun-fact {
+    background: rgba(100, 204, 255, 0.1);
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 50px auto;
+    text-align: center;
+    border: 2px dashed #64ccff;
+}
+
+.fun-fact p {
+    color: #c2e5ff;
+    font-size: 1.3rem;
+    font-style: italic;
+}
+
+/* Подвал */
+footer {
+    background: #0a192f;
+    padding: 40px 20px;
+    border-top: 3px solid #2a5298;
+    margin-top: 60px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footer-logo {
+    text-align: center;
+}
+
+.footer-logo-img {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 15px;
+
+}
+
+/* Соц-кнопки */
+.social-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: #2a5298;
+    color: white;
+    text-decoration: none;
+    font-size: 1.4rem;
+    transition: all 0.3s;
+}
+
+.social-btn:hover {
+    background: #64ccff;
+    transform: translateY(-5px) rotate(10deg);
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+    .carousel-container {
+        max-width: 90%;
+    }
+    
+    .dolphin-card {
+        min-height: 450px;
+        padding: 25px;
+    }
+    
+    .dolphin-card img {
+        height: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.2rem;
+    }
+    
+    h2 {
+        font-size: 1.8rem;
+    }
+    
+    .carousel-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+    
+    .dolphin-card {
+        min-height: 400px;
+        padding: 20px;
+    }
+    
+    .dolphin-card img {
+        height: 180px;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .social-icons {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 20px 15px;
+    }
+    
+    header {
+        height: 200px;
+    }
+    
+    header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .dolphin-card {
+        min-height: 380px;
+        padding: 15px;
+    }
+    
+    .dolphin-card img {
+        height: 150px;
+    }
+    
+    .sound-btn {
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
+}
